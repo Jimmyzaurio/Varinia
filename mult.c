@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
+#define lli long long int
+
 #define TRES 1000
 #define SEIS 1000000
 #define NUEVE 1000000000
@@ -24,7 +26,7 @@ int mult2(int a, int b) {
 		mult2( ceil(a/2),  ceil(b/2));
 }
 
-int mult3(int a, int b) {
+lli mult3(lli a, lli b) {
 	if(a < 1000 && b < 1000)
 		return a*b;
 	return
@@ -37,6 +39,6 @@ int main() {
 	int a,b;
 
 	while(scanf("%d%d", &a, &b) == 2)
-		printf("%d\n", mult3(a,b)); 
+		printf("%lli\n", mult3(a,b)); 
 	return 0;
 }
