@@ -16,14 +16,14 @@
 #define MB (b/TRES) % TRES
 #define RB b%TRES
 
-int mult2(int a, int b) {
+lli mult2(lli a, lli b) {
 	if(b/10 == 0 || a/10 == 0)
 		return a*b;
 	return
-		mult2(floor(a/2),  ceil(b/2)) +
-		mult2( ceil(a/2), floor(b/2)) +
-		mult2(floor(a/2), floor(b/2)) +
-		mult2( ceil(a/2),  ceil(b/2));
+		mult2(floor(a/2.0),  ceil(b/2.0)) +
+		mult2( ceil(a/2.0), floor(b/2.0)) +
+		mult2(floor(a/2.0), floor(b/2.0)) +
+		mult2( ceil(a/2.0),  ceil(b/2.0));
 }
 
 lli mult3(lli a, lli b) {
@@ -36,9 +36,11 @@ lli mult3(lli a, lli b) {
 }
 
 int main() {
-	int a,b;
+	lli a,b;
 
-	while(scanf("%d%d", &a, &b) == 2)
-		printf("%lli\n", mult3(a,b)); 
+	//printf("%lf %lf \n", floor(15/2.0), ceil(15/2.0));
+
+	while(scanf("%lli%lli", &a, &b) == 2)
+		printf("%lli\n", mult2(a,b)); 
 	return 0;
 }
